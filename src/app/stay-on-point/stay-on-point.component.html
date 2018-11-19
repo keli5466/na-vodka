@@ -1,0 +1,27 @@
+<div class="stay-on-point cta-block vueport">
+	<div class="content stager-in-vue">
+		<h2 class="headline">Stay on point</h2>
+		<p class="copy">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu sapien
+			auctor, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu
+			sapien auctor
+		</p>
+		<form #subscribeForm="ngForm" (ngSubmit)="onSubmit()">
+			<div class="form-group">
+				<label for="email">Email *</label>
+				<input
+					type="email"
+					name="email"
+					id="private"
+					required
+					placeholder="Enter Your Email"
+					[(ngModel)]="email"
+				/>
+			</div>
+			<button type="submit" class="cta sm">Join Email List</button>
+
+			<input type="hidden" name="MID" id="MID" value="10978598" />
+			<input type="hidden" name="LID" id="LID" value="5087565" />
+		</form>
+	</div>
+</div>

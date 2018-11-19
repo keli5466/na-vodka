@@ -1,0 +1,64 @@
+@import '../../definitions.styl'
+.headline-block
+	@media (max-width S)
+		.page-title
+			letter-spacing normal
+			line-height 0.88
+		.subhead
+			font-family TradeGothicLTStd
+			text-transform capitalize
+			font-size 36px
+			line-height 1.33
+	@media (min-width S)
+		margin-top rem(34px)
+		max-width 900px
+		width 100%
+
+// Block Layouts
+.block
+	min-height 100vh
+	padding rem(110px) rem(gutter)
+	display flex
+	flex-direction column
+	opacity 0
+	animation moveUpStagger 0.7s forwards cubic-bezier(0.25, 0, 0.25, 1.01)
+	@media (min-width S)
+		padding-left rem(100px)
+		padding-top rem(180px)
+		padding-bottom rem(180px)
+		.content
+			width 50%
+		.body-copy
+			max-width rem(470px)
+
+
+.content
+	margin-top auto
+	opacity 0
+	.inView &
+		animation opacity 1.5s 200ms forwards ease
+
+.title
+	color white
+	text-align left
+	margin-bottom 24px
+	@media (min-width S)
+		margin-bottom rem(40px)
+	@media (max-width S)
+		font-size 170px
+		line-height 0.85
+
+
+
+.body-copy
+	color white!important
+	line-height 1.33
+	@media (min-width S)
+		line-height 1.54
+		letter-spacing -0.5px
+
+button
+	margin-top 24px
+	min-height rem(72px)
+	@media (min-width S)
+		margin-top rem(64px)

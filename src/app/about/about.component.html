@@ -1,0 +1,17 @@
+<app-loading *ngIf="!doneLoading"></app-loading>
+
+<div *ngIf="doneLoading">
+	<div class="headline-block gutter vueport">
+		<h2 class='page-title' id='grow' [innerHtml]=pageTitle></h2>
+		<h3 class='subhead opacity' [innerHtml]=bodyContent></h3>
+	</div>
+
+	<div class='block vueport parallax' *ngFor="let panel of contentPanels"
+			 [style.background]="panel.backgroundImageURL ? 'url(' + panel.backgroundImageURL + ')' : '' ">
+		<div class='content'>
+			<h3 class="title" *ngIf="panel.panelTitle">{{ panel.panelTitle }}</h3>
+			<p class='body-copy' *ngIf="panel.panelContent" [innerHtml]=panel.panelContent></p>
+			<button *ngIf="panel.panelButtonText" (click)='doClickPanelButton( panel.panelButtonUrl )'>{{ panel.panelButtonText }}</button>
+		</div>
+	</div>
+</div>

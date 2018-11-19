@@ -1,0 +1,9 @@
+<app-loading *ngIf="!doneLoading"></app-loading>
+
+<div class='use-agreement gutter legal vueport' *ngIf="doneLoading">
+	<div class='headline-block'>
+		<h2 class='subhead-copy' id='grow' [innerHtml]=pageTitle></h2>
+	</div>
+
+	<wineos-legalcontent class='opacity sm-v-space'></wineos-legalcontent>
+</div>

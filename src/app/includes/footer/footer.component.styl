@@ -1,0 +1,99 @@
+@import '../../../definitions.styl'
+
+footer
+	background-color #ebebeb
+	display flex
+	justify-content center
+	align-items center
+	flex-direction column
+	padding rem(90px) rem(59px)
+	a:hover
+	a:active
+		opacity 0.5
+	p
+	a
+		font-family body-font
+		font-size 24px
+		font-weight normal
+		line-height 1.04
+		color cool-grey
+		@media (min-width S)
+			text-align left
+			font-size 18px
+
+	@media (min-width S)
+		padding rem(80px) rem(100px) rem(57px)
+
+// .opacity
+// 	animation opacity 300ms forwards ease 1s
+
+// TOP
+.top
+	text-align center
+	max-width rem(370px)
+	height 100%
+	.logo
+		width rem(300px)
+	p
+		padding-top rem(20px)
+	@media (min-width S)
+		width 50%
+		max-width 50%
+		margin-right auto
+		text-align left
+		.logo
+			width rem(142px)
+
+
+
+.bottom
+	width 100%
+	@media (min-width S)
+		display flex
+		width 100%
+		align-items baseline
+
+// Mobile Links
+.mobile-links
+	margin rem(80px) auto
+	display flex
+	align-items center
+	max-width rem(475px)
+	a
+		height rem(60px)
+		margin-right auto
+		text-align center
+		img
+			height 100%
+		&:last-child
+			margin-right 0
+
+	@media (min-width S)
+		margin 0
+		order 3
+		width auto
+		margin-left auto
+		a
+			width rem(22px)
+			height @width
+			margin-right rem(34px)
+			&:last-child
+				margin-right 0
+
+// Bottom Terms
+.terms
+	display flex
+	p
+		margin-right 5px
+	a
+		text-transform capitalize
+		&:not(:last-child)
+			margin-right auto
+	@media (min-width S)
+		padding-top rem(20px)
+		a
+			margin-right 0
+			color cobalt
+			&:not(:last-child):after
+				content '|'
+				margin 0 5px

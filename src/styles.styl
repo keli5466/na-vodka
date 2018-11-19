@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/fonts/index.css'
+@import '../node_modules/bukwild-stylus-library/boilerplate'
+@import 'definitions.styl'
+@import 'assets/css/*.styl'
+// Set font-sizes so rem values for responsive effects.  Combined with the
+// font() call on `body`, this scales from 20px down to 14px
+:root
+	mq-values(font-size, 100%, 42%, S, 320px)
+	@media (min-width S)
+		mq-values(font-size, 100%, 60%, 1440px , S)
+
+:focus
+	outline none
+
+html
+body
+	overflow-x hidden
+
+select::-ms-expand
+		display none
+
+input::-ms-check
+		display none
+
+
+app-not-found
+	height 100%
+	margin-top auto
+	margin-bottom auto
+	text-align center
+
+app-root
+	display flex
+	flex-direction column
+	min-height 100vh
+
+.shadow
+	box-shadow tile-shadow
+	&:hover
+		box-shadow hover-tile-shadow
+
+app-footer
+	height 100%
+	width 100%
+	margin-top auto
+
+body
+	letter-spacing normal
+	line-height normal
+	font-family body-font
+	max-width max-w
+	margin 0 auto
+	@media (min-width 1440px)
+		padding-h 40px
+
+p
+	margin 0
+	padding 0
+
+.v-space
+	margin-v rem(100px)
+
+.sm-v-space
+	margin-v rem(60px)
+
+.hidden
+	visibility hidden
+
+// ScrollBar
+::-webkit-scrollbar
+	width 10px
+::-webkit-scrollbar-track
+	background white
+::-webkit-scrollbar-thumb
+	background #d8d8d8
+	border-radius 7.5px
+::-webkit-scrollbar-thumb:hover
+	background slate-grey
+	cursor grab
+
+
+.gutter
+	padding-left rem(gutter)
+	padding-right rem(gutter)
+	@media (min-width S)
+		padding-left rem(l-gutter)
+		padding-right rem(l-gutter)
+	@media (min-width M)
+		padding-left rem(left-spacing)
+		padding-right rem(left-spacing)
+
+.show-mobile
+	display block
+	@media (min-width S)
+		display none
+
+.show-desktop
+	display none
+	@media (min-width S)
+		display block
+
+.underline
+	text-decoration underline
+
+.max-width
+	max-width max-w
+	width 100%
+	height 100%
+	margin-left auto
+	margin-right auto
+
+// PLACE HOLDERS & ICOMOON
+.video-placeholder
+	background url('assets/images/video-placeholder.jpg') no-repeat
+	background-size cover
+	background-position center center
+	aspect-ratio(4/3)
+
+.video
+	background url('assets/images/video-placeholder.jpg') no-repeat
+	background-size cover
+	background-position center center
+	aspect-ratio(4/3)
+
+
+.parallax
+	@media (min-width S)
+		background-attachment fixed!important
+	background-position center!important
+	background-repeat no-repeat!important
+	background-size cover!important

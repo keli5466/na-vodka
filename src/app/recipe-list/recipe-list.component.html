@@ -1,0 +1,56 @@
+<app-loading *ngIf="!doneLoading"></app-loading>
+
+<div *ngIf="doneLoading">
+	<div class="headline-block gutter vueport">
+		<div class="logo" id='grow'>
+			<img src='../../assets/images/logo.svg' />
+		</div>
+		<h2 *ngIf='pageTitle' class='page-title' id='grow' [innerHtml]=pageTitle></h2>
+		<h3 *ngIf='bodyContent' class="subhead opacity" [innerHtml]=bodyContent></h3>
+	</div>
+
+	<!-- Flavor fitlers -->
+	<div class='gutter vueport'>
+		<form class='filter opacity' novalidate>
+
+			<!-- View all radio button -->
+			<input [checked]='!activeFilter' name="scope" class="scope" value="view_all" id="all-view" type="radio" (change)="removeFilters()">
+			<label class='filter-choice' for="all-view">View All</label>
+
+			<!-- Filter radio button -->
+			<input [checked]='activeFilter' name="scope" class="scope" value="filtered" id="filter-view" type="radio" (change)="toggleFilter = !toggleFilter">
+			<label class='filter-choice' for="filter-view">Filtered Results</label>
+
+			<!-- Menu toggle -->
+			<div class="toggle-menu" [ngClass]="{ 'toggle' : toggleFilter }" (click)="toggleFilter = !toggleFilter"></div>
+
+			<!-- Flavor options list -->
+			<div class="flavor-options" *ngIf="toggleFilter" [@fadeInOut]>
+				<div class='overflow-containter'>
+
+					<!-- List of filter items -->
+					<div class='flavor-item' *ngFor="let flavor of flavors; let i = index">
+						<input (change)='handleActiveFilter(i)' [checked]='activeFilter === i' class="flavor-option-item" name="flavor"
+						 [value]="flavor.title" id="liquor-{{ i }}" type="checkbox">
+						<label for="liquor-{{ i }}">{{ flavor.title }}</label>
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- Flavor grid -->
+	<div *ngIf='activeRecipes' class='flavor-grid gutter vueport stager inView' [ngClass]="{'overlay' : toggleFilter}">
+		<div *ngFor="let recipe of activeRecipes" class='flavor shadow-card'>
+			<a class='card-wrapper' routerLink="{{ recipe.path }}">
+				<img *ngIf='recipe.field_recipe_images' class='flavor-img' [src]="recipe.field_recipe_images" [alt]="recipe.title" />
+				<div *ngIf='recipe.title' class='flavor-name' [innerHtml]=recipe.title.toLowerCase()></div>
+			</a>
+		</div>
+	</div>
+
+	<div *ngIf='!activeRecipes.length' class='not-found gutter'>
+		<h2 class='subhead'>There are no recipes associated with that flavor</h2>
+	</div>
+</div>

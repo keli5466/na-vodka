@@ -1,0 +1,47 @@
+<div class='navagation'>
+
+	<div class='top-section'>
+		<div (click)="toggleMenu()" class='nav-toggle'>
+			<div [ngClass]="{'active': menuToggle}" id="menu-bar">
+				<div class="bar">	</div>
+				<div class="bar">	</div>
+				<div class="bar">	</div>
+			</div>
+			<p class='explore'>explore</p>
+		</div>
+	</div>
+
+	<nav [@slideInOut]="menuState" [ngClass]="{'animate':  menuToggle}" class='mobile-menu'>
+		<div class="mobile-menu-wrapper max-width">
+			<div class='top-section'>
+				<a class='logo' routerLink="/" (click)="toggleMenu()">
+					<img src='./assets/images/logo.svg'/>
+				</a>
+				<div class='nav-toggle' (click)="toggleMenu()" >
+					<div [ngClass]="{'active': menuToggle}" id="menu-bar">
+						<div class="bar">	</div>
+						<div class="bar">	</div>
+						<div class="bar">	</div>
+					</div>
+					<p>close</p>
+				</div>
+			</div>
+
+			<ul class="main-nav" [@theChildAnimation]="menuState">
+				<li><a routerLink="/flavors/vodka">Original Vodka</a></li>
+				<li><a routerLink="/flavors/gin">Gin</a></li>
+				<li><a routerLink="/flavors">Flavors</a></li>
+				<li><a routerLink="/recipe-list">Drinks</a></li>
+				<li><a routerLink="/about">About</a></li>
+				<li><a routerLink="/wheretobuy">Where To Buy</a></li>
+				<li><a routerLink="/contact">Contact</a></li>
+			</ul>
+
+			<ul class="terms">
+				<li> <a routerLink="/use-agreement">  terms of service</a></li>
+				<li> <a routerLink="/privacy-policy"> privacy policy</a></li>
+			</ul>
+		</div>
+	</nav>
+
+</div>

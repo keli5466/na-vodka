@@ -1,0 +1,81 @@
+.form-group
+	label
+		form-label()
+		display block
+		color slate-grey !important
+		margin-bottom rem(31px)
+		font-size rem(36px)
+		@media (min-width S)
+			margin-bottom rem(23px)
+			color cool-grey !important
+	textarea
+	select
+	input
+		border-bottom solid rem(2px) #979797 !important
+		border-top none !important
+		border-left none !important
+		text-align-last left !important
+		border-right none !important
+		padding-left 0 !important
+		input-style()
+
+	input::placeholder
+		color cool-grey!important
+
+
+input[type='checkbox']
+input[type='radio']
+	appearance unset
+	background white
+	margin 0
+	border 0 !important
+	box-shadow 0 1px 3px 0 rgba(22, 48, 95, 0.5)
+	height rem(27px)
+	width rem(27px)
+	display inline-block
+	border-radius 50%
+	@media (min-width S)
+		height 18px
+		width 18px
+
+	&:checked
+		transition background 300ms ease-out
+		background cobalt
+		+ label
+			transition color 300ms ease-out
+			color cobalt !important
+
+
+select
+	height 100% !important
+	white-space normal
+	position relative
+	background url('../../assets/images/icons/dropdown-arrow.svg') no-repeat !important
+	background-position center right !important
+	&:focus
+		background-color: transparent;
+
+
+
+// AUTOFILL overflow RIDE
+input:-webkit-autofill
+input:-webkit-autofill:hover
+input:-webkit-autofill:focus
+textarea:-webkit-autofill
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus
+select:-webkit-autofill
+select:-webkit-autofill:hover
+select:-webkit-autofill:focus
+	background-color white!important
+	-webkit-box-shadow 0 0 0px 1000px white inset
+	color cobalt!important
+	-webkit-text-fill-color cobalt!important
+
+// TEXTAREA ARROW
+textarea
+	appearance textarea !important
+	position relative
+	background url('../../assets/images/icons/side-angle.svg') no-repeat !important
+	background-position bottom right !important
+	background-size rem(16px) rem(16px) !important

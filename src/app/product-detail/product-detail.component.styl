@@ -1,0 +1,66 @@
+@import '../../definitions.styl'
+
+icon-background = #ebebeb
+
+.headline-block
+	width auto
+
+.featured-flavor
+	.content
+		margin-top 0
+
+	.right
+		margin-top 5%
+
+	.subhead
+		margin-bottom rem(42px)
+
+	.shadow-tile
+		img
+			max-height rem(600px)
+
+.copy
+	color cool-grey
+
+	@media (min-width: S)
+		color black
+		font-size 18px
+		letter-spacing normal
+		line-height 1.33
+
+.share-recipe
+	display block
+	margin-bottom rem(32px)
+
+.recipe
+	font 'trade', 67px, black
+	text-transform uppercase
+
+.flavor-notes
+	margin rem(80px) auto
+
+	.circle
+		background icon-background
+		border-radius 50%
+		height 80px
+		width 80px
+
+	.flavor-note
+		align-items center
+		display flex
+		margin-bottom rem(24px)
+
+		@media (min-width: S)
+			justify-content flex-start
+
+	.copy
+		color slate-grey
+		margin-left rem(50px)
+
+	.icon
+		height rem(144px)
+		width rem(144px)
+
+		@media (min-width: S)
+			height @width
+			width rem(80px)

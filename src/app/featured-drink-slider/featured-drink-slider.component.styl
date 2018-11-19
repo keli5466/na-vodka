@@ -1,0 +1,64 @@
+@import '../../definitions.styl'
+
+// Card Vars
+card-left-margin = 20px
+card-top-pad = 70px
+card-bottom-pad = 45px
+top-margin = 50px
+card-spacing = 10px
+// space between headline and slider
+space-2-slider = 120px
+
+.featured-drinks
+	display flex
+	padding-left rem(gutter)
+
+.drink-slider
+	padding-left rem(space-2-slider + card-spacing)
+	width 100%
+
+.drink
+	display inline-block
+	margin-bottom rem(80px)
+	margin-top rem(top-margin)
+	shadow(469, 724)
+	background none
+
+.card-wrapper
+	padding-bottom rem(card-bottom-pad)
+	padding-top rem(card-top-pad)
+	width calc(100% - 20px)
+
+.drink-name
+	font-size 48px
+	margin-bottom auto
+	max-width 200px
+	white-space normal // needed to have two lines
+
+	@media (min-width: S)
+		font-family Knockout-HTF27-JuniorBantamwt
+		text-transform capitalize
+
+.drink-img
+	margin auto
+	max-height 60%
+
+.headline1
+	font-size 140px
+	margin-top rem(top-margin)
+	text-transform capitalize
+	transform rotate(-180deg)
+	white-space nowrap
+	writing-mode vertical-rl
+
+	@media (min-width: S)
+		text-transform uppercase
+
+.controls
+	opacity 0
+	transform translateY(50px)
+	transition transform 400ms cubic-bezier(0, 0, 0.2, 1), opacity 600ms ease
+
+	&.inView
+		opacity 1
+		transform translateY(0)

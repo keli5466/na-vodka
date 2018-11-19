@@ -1,0 +1,87 @@
+
+headline-width = 520px
+video-left-spacing = 330px
+headline-mask = video-left-spacing - l-gutter
+
+// Animations Vars
+delay = 0.5s
+slide-duration = 1.1s
+
+// BLOCKS
+.header
+	display flex
+	position relative
+	flex-direction row
+	flex-wrap wrap
+	// Headline Block
+	.headline-block
+		.headline
+			color black
+			margin-bottom rem(20px)
+		@media (min-width S)
+			height 100%
+			position absolute
+			left 0
+			z-index 1
+			top 0
+			display flex
+			flex-direction column
+			.subhead
+				font-size 42px
+			.logo
+				max-width rem(142px)
+				img
+					width 100%
+
+.hero-video
+	width 100%
+	transform translateX(100%)
+	box-shadow tile-shadow
+	position relative
+	& > *
+		width 100%
+
+	@media (min-width S)
+		aspect-ratio(16/9)
+		margin-left rem(video-left-spacing)
+
+
+// Text Mask
+.headline-mask
+	position relative
+	margin-v auto
+	.bottom-mask
+		z-index -1
+		position absolute
+		top 0
+	.top-mask
+		overflow hidden
+
+@media (min-width S)
+	h2
+	h3
+		width rem(headline-width)
+		.bottom-mask &
+			color white!important
+
+// Opening Animtion
+.header.active
+	.opacity
+		opacity 1
+		transition opacity 0.7s cubic-bezier(0.1, 0.4, 0.25, 1) delay
+	.moveUp
+		animation moveUp 0.7s forwards cubic-bezier(0.25, 0, 0.25, 1.01) delay
+	#grow:after
+		animation grow 0.8s forwards cubic-bezier(0.6, 0.19, 0.07, 1) slide-duration
+	#slideLeft
+		opacity 1
+		animation inOut slide-duration forwards cubic-bezier(0.24, 0, 0.33, 0.99) delay
+	@media (min-width S)
+		.top-mask
+			animation maskText 0.5s forwards cubic-bezier(0.24, 0.5, 0.33, 0.99) slide-duration
+
+@keyframes maskText
+	0%
+		width rem(headline-width)
+	100%
+		width rem(headline-mask)

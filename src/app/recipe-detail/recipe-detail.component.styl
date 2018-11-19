@@ -1,0 +1,54 @@
+@import '../../definitions.styl'
+.recipe-detail
+	@media (min-width S)
+		display flex
+		.right
+			padding-right rem(gutter)
+
+// Right Side
+.right
+	width 40%
+
+@media (max-width S)
+	.subhead-copy
+		margin-bottom rem(20px)
+
+// Recipe Image
+.drink-img
+	width 70%
+	max-width rem(360px)
+	margin 0 auto
+	text-align center
+	padding rem(114px) 0 rem(76px)
+
+// Share Recipe shown on mobile
+.share-recipe
+	margin-top rem(12px)
+	font-family Helvetica
+	font-size rem(24px)
+	text-decoration underline
+	text-align left
+	color cool-grey
+
+// Line height placeholder to break up the ingredients
+.ingredients p
+	line-height 2
+
+.copy
+	line-height normal
+	color cool-grey
+	margin rem(20px) auto
+	@media (min-width S)
+		margin rem(35px) auto rem(48px)
+		font-size 18px
+		letter-spacing normal
+		line-height 1.33
+		color black
+
+h4
+	font 'light', 48px, black
+	line-height 1.25
+	@media (min-width S)
+		font-size 44px
+		line-height 1.02
+		color slate-grey

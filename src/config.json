@@ -1,0 +1,19 @@
+{
+  "AWS": {
+    "APIKey": "",
+    "RootURL": ""
+  },
+  "authNet": {
+    "apiLogin": "",
+    "clientKey": ""
+  },
+  "Brand": {
+    "BrandCode": "NAM",
+    "BrandName": "New Amsterdam Spirits",
+    "Domain": "newamsterdamspirits.com"
+  },
+  "Drupal": {
+    "Endpoint": "https://content-dev.newamsterdamspirits.com/"
+  }
+
+}

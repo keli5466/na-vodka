@@ -1,0 +1,54 @@
+@import '~definitions.styl'
+
+.cta-block
+	text-align center
+	padding rem(v-space) rem(gutter)
+	color white
+	@media (min-width S)
+		.content
+			width 60%
+			max-width rem(662px)
+
+// wrapper of text content
+.content
+	margin 0 auto
+	width 100%
+
+.copy
+	color white
+	width 98%
+	margin rem(10px) auto rem(40px)
+	@media (max-width S - 1)
+		font-family TradeGothicLTStd-Cn18
+
+.stay-on-point
+	background-color cobalt
+
+// FORM
+.form-group
+	margin-top rem(80px)
+	margin-h auto
+	margin-bottom rem(174px)
+	@media (min-width S)
+		margin-bottom rem(90px)
+
+	label
+		font 'light' , 36px, white
+		margin-bottom rem(31px)
+		display block
+		text-align left
+		color white!important
+		@media (min-width S)
+			font-size 30px
+
+	input
+		display block
+		width 100%
+		border-bottom solid rem(3px) white
+		border-top none
+		border-left none
+		border-right none
+		font 'light' , 56px, white
+		&::placeholder
+			color white
+			opacity 0.5

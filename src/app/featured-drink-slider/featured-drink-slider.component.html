@@ -1,0 +1,18 @@
+<div class="featured-drinks v-space">
+	<div class="controls vueport"><h2 class="headline1">Featured Drinks</h2></div>
+	<div class="siema drink-slider vueport" *ngIf="recipes.length">
+		<div class="drink shadow-card" *ngFor="let recipe of recipes">
+			<div class="card-wrapper">
+				<div
+					*ngIf="recipe && recipe.title"
+					class="drink-name"
+					[innerHtml]="recipe.title.toLowerCase()"
+				></div>
+				<img class="drink-img" [src]="recipe.image" [alt]="recipe.recipe" />
+				<button routerLink="{{ recipe.path }}" class="default sm">
+					See Recipe
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

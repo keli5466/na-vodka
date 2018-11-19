@@ -1,0 +1,56 @@
+
+.product-card
+	shadow(664,843)
+	margin-h auto
+	@media (min-width S)
+		margin-left auto
+	> .card-wrapper
+		padding-v rem(60px)
+		.recipe
+			+ img
+				max-height 60%
+				margin-bottom auto
+				@media (min-width S)
+					max-height 60%
+					margin-bottom 5%
+		.cta
+			margin-top auto
+
+		img
+			margin-top auto
+			max-height 80%
+			@media (min-width S)
+				max-height 90%
+
+
+.promo-block
+	.left
+	.right
+		width 100%
+	.subtitle
+		margin-top rem(24px)
+		margin-bottom rem(16px)
+
+	@media (max-width S - 1px)
+		.home-page &
+			&:not(:last-of-type)
+				margin-bottom rem(135px)
+		.product-card
+			margin-top rem(64px)
+
+	@media (min-width S)
+		display flex
+		.left
+		.right
+			width 50%
+			flex auto
+		.content
+			max-width rem(470px)
+			margin-right rem(100px)
+			margin-top 5%
+		.subtitle
+			margin-top rem(32px)
+			line-height 1.02
+			margin-bottom rem(34px)
+		.cta
+			margin-top rem(70px)

@@ -1,0 +1,174 @@
+
+@import '~definitions.styl'
+@import 'select.styl'
+
+// *TOP
+wineos-contactus
+	#formHeaderWrapper
+		body-copy()
+		@media (min-width S)
+			max-width rem(470px)
+
+	// animations
+	h1
+	#formHeaderWrapper
+		overflow hidden
+		position relative
+		&:after
+			content ''
+			background white
+			width 100%
+			height 100%
+			bottom 0
+			left 0
+			position absolute
+		.inView &
+			&:after
+				animation grow 0.8s forwards cubic-bezier(0.6, 0.19, 0.07, 1)
+
+	form
+		opacity 0
+		transition opacity 0.7s cubic-bezier(0.42, 0, 0.58, 1)
+		.inView &
+			opacity 1
+
+	h1
+		H2-Drink-Titles()
+		color black
+		margin-bottom rem(34px)
+		@media (min-width S)
+			margin-bottom rem(24px)
+			max-width rem(470px)
+
+	p
+		color slate-grey
+		@media (min-width S)
+			body-copy()
+			color black
+
+	// Second copy block
+	.forHeaderChild
+		color slate-grey
+		@media (min-width S)
+			color black
+			line-height 2
+		a
+			font-weight bold
+			color cobalt
+			text-decoration underline
+
+
+	// MIDDLE 	P that gives spacing
+	#formHeaderWinefinder
+		margin 8px auto
+
+	// Form
+	form
+		max-width 100% !important
+		padding 0 !important
+		margin-top rem(130px)
+		@media (min-width S)
+			display flex
+			margin-top rem(90px)
+			flex-wrap wrap
+			justify-content space-between
+
+	//First input on desktop version stands on its on line
+	#reasonCodeWrapper
+		select
+			height 100% !important
+		@media (min-width S)
+			width 100%
+			max-width rem(600px)
+			margin-right 50% !important
+
+	// // group styles
+	.form-group
+		margin 0 auto rem(97px)
+		@media (min-width S)
+			width 48%
+			margin-bottom rem(67px)
+			max-width rem(500px)
+			margin-left 0 !important
+			margin-right auto !important
+
+	// DATE PICKER
+	input[type="date"]::-webkit-calendar-picker-indicator
+	input[type="date"]::-webkit-inner-spin-button
+		font-size 1.5rem
+
+
+	// DROPDOWN ARROW
+	select
+		padding-right 3.2%
+		@media (min-width S)
+			height 50px !important
+
+	#phoneNoWrapper
+		#phone
+			height 100% !important
+			@media (min-width S)
+				height 50px !important
+
+	// RADIO BUTTONS
+	label.radioInlineLabel
+		width 25% !important
+		font-size rem(32px) !important
+		padding-left 5px
+
+
+	#prefContactMethodWrapper
+		align-items center
+		width 100%
+
+	#commentsHeaderWrapper
+	#productHeaderWrapper
+	#contactInfoText
+		display none !important
+
+	//requirements
+	#formRequirementsWrapper
+		margin-left 0
+		p
+			margin-bottom rem(18px)
+			form-label()
+
+	// Details and Error Message
+	#bottleProductCodeExample
+	#showUPCExample
+	.help-block
+		form-label()
+		display block
+		margin-top rem(7px)
+	.help-block
+		color red !important
+	//Detail bar code
+	#upcDetailWrapper
+		margin-top rem(20px)
+	#upcMessageWrapper
+		margin-bottom rem(20px)
+
+
+	// submit bottom
+	#submitBtnWrapper
+		button
+			background cobalt
+			border solid 1px cobalt
+			color white
+			width rem(280px)
+			height rem(72px)
+			buttons()
+			&:hover
+				color cobalt
+
+	// bottom radios
+	#userOpinionWrapper
+	#moreInfoWrapper
+	#userContactWrapper
+		label
+			display inline-block !important
+			width 85%
+			vertical-align top
+			@media (min-width S)
+				width 90%
+

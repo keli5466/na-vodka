@@ -1,0 +1,20 @@
+<app-loading *ngIf="!doneLoading"></app-loading>
+
+<div class='product-list' *ngIf="doneLoading">
+	<div class="headline-block gutter vueport">
+		<div class="logo" id='grow'>
+			<img src='../../assets/images/logo.svg' />
+		</div>
+		<h2 *ngIf='pageTitle' class='page-title' id='grow' [innerHtml]=pageTitle></h2>
+		<h3 *ngIf='pageSubtitle' class="subhead opacity" [innerHtml]=pageSubtitle></h3>
+	</div>
+
+	<!-- Flavor grid -->
+	<div class="flavor-grid gutter vueport stager">
+		<div class='flavor shadow-card' *ngFor="let f of flavors">
+			<a class="card-wrapper" [routerLink]="f.path">
+				<img class='flavor-img' [src]="f.imagefilename" [alt]="f.flavor" />
+				<div class='flavor-name'>{{ f.flavor }}</div>
+			</a>
+		</div>
+	</div>

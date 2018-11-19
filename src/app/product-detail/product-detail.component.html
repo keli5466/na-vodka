@@ -1,0 +1,110 @@
+<app-loading *ngIf="!doneLoading"></app-loading>
+
+<div class="product-detail" *ngIf="doneLoading">
+	<div class="featured-flavor promo-block gutter vueport">
+		<div class="content left">
+			<div class="headline-block">
+				<div *ngIf="title" class="featured" id="grow">FEATURED FLAVOR</div>
+				<div *ngIf="title" class="page-title" id="grow">{{ title }}</div>
+				<div *ngIf="description" class="subhead-copy opacity">Sub Copy</div>
+				<p
+					*ngIf="description"
+					class="copy opacity"
+					[innerHtml]="description"
+				></p>
+			</div>
+
+			<div class="product-card show-mobile shadow-card sm-v-space">
+				<div class="card-wrapper">
+					<img
+						*ngIf="product_image_url"
+						[src]="product_image_url"
+						[alt]="title"
+					/>
+					<button
+						*ngIf="field_buy_now_link"
+						(click)="navigateToDrizly()"
+						class="cta default drizly"
+					>
+						Buy Now
+					</button>
+				</div>
+			</div>
+
+			<ul class="flavor-notes stager-in-vue">
+				<li class="flavor-note" *ngFor="let flavor of flavor_notes">
+					<div class="circle">
+						<img class="icon" [src]="flavor.flavor_icon" alt="" />
+					</div>
+					<p class="copy">{{ flavor.title }}</p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="right show-desktop">
+			<div class="product-card shadow-card" id="slideLeft">
+				<div class="card-wrapper">
+					<img [src]="product_image_url" alt="{{ title }}" />
+
+					<button
+						*ngIf="field_buy_now_link"
+						(click)="navigateToDrizly()"
+						class="cta default drizly"
+					>
+						Buy Now
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div
+		*ngIf="featuredDrink && featuredDrink.title"
+		class="promo-block the-dasher gutter sm-v-space"
+	>
+		<div class="content left show-desktop">
+			<h2 *ngIf="featuredDrink && featuredDrink.title" class="title">
+				{{ featuredDrink.title }}
+			</h2>
+			<h3
+				*ngIf="featuredDrink && featuredDrink.subtitle"
+				class="subtitle"
+				[innerHtml]="featuredDrink.subtitle"
+			></h3>
+			<a class="share-recipe underline copy" (click)="gotoShareLink()">Share</a>
+			<p
+				*ngIf="featuredDrink && featuredDrink.description"
+				class="copy"
+				[innerHtml]="featuredDrink.description"
+			></p>
+		</div>
+
+		<div class="right">
+			<div class="product-card shadow-card">
+				<div class="card-wrapper">
+					<h2
+						*ngIf="featuredDrink && featuredDrink.title"
+						class="recipe show-mobile"
+					>
+						{{ featuredDrink.title }}
+					</h2>
+					<img
+						*ngIf="featuredDrink && featuredDrink.image"
+						[src]="featuredDrink.image"
+						alt=""
+					/>
+					<button [routerLink]="featuredDrink.path" class="cta default">
+						See Recipe
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<app-featured-drink-slider
+		*ngIf="featuredRecipeIDs"
+		[featuredDrinkIDs]="featuredRecipeIDs"
+	></app-featured-drink-slider>
+	<app-stay-on-point></app-stay-on-point>
+	<app-where-to-buy class="show-mobile"></app-where-to-buy>
+</div>

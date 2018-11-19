@@ -1,0 +1,41 @@
+
+<div class='age-check' [ngClass]="{'confirmed': !age}" id='agegate' style="background: url('../../assets/images/age-gate-bg.png') top center/cover no-repeat;">
+	<div class="agegate">
+		<div class="agegate-wrapper">
+			<div class='front card' [ngClass]="{'active': !underAge}">
+
+				<div class="logo" id='grow'>
+					<img src='../../assets/images/logo.svg'/>
+				</div>
+
+				<h1 class="agegate-question moveUp" id='grow'>	Are you over 21? </h1>
+
+				<div class="agegate-birthday moveUp">
+					<h3 class='agegate-check'>Is your brithday before:</h3>
+					<span class='agegate-date subtitle'> {{date | date : 'MM dd y'}} </span>
+				</div>
+
+				<p class="agegate-warning moveUp">	Persons under legal drinking age are prohibited from entering this site</p>
+
+				<div class="confirmation-buttons moveUp">
+						<button (click)="closeGate()" class="blue-bg agegate-btn">	Yes</button>
+						<button (click)="sorryGate()" class="default agegate-btn">	No</button>
+				</div>
+			</div>
+
+			<div class='back card' [ngClass]="{'active': underAge}">
+					<div class="logo"><img src='../../assets/images/logo.svg'/></div>
+
+					<h1 class="agegate-question"> SORRY
+					</h1>
+
+					<p class="agegate-warning">	Persons under legal drinking age are prohibited from entering this site</p>
+
+					<div class="confirmation-buttons">
+							<button (click)="sorryGate()" class="default agegate-btn"> Go Back</button>
+					</div>
+			</div>
+		</div>
+
+	</div>
+</div>

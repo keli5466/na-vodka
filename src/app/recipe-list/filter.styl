@@ -1,0 +1,117 @@
+// Nolan trying to make checkboxes
+plus-width = 3px
+
+// form parent
+.filter
+	margin-top rem(80px)
+	position relative
+	display flex
+	align-items center
+	max-width 300px
+
+// first filters
+.filter-choice
+	margin-right auto
+	&:first-of-type
+		margin-right rem(32px)
+
+// Plus toggle
+.toggle-menu
+	display block
+	color cobalt
+	font-weight 500
+	width 20px
+	height @width
+	position relative
+	transform-origin center center
+	transition transform 500ms ease
+	&:hover
+		cursor pointer
+	&:before
+	&:after
+		content ''
+		background cobalt
+		display block
+		position absolute
+		transform-origin center center
+		opacity 1
+	&:before
+		height 100%
+		width plus-width
+		transition all 300ms ease
+		left 50%
+		transform rotate(0deg) translateX(-50%)
+	&:after
+		width 100%
+		top 50%
+		transform translateY(-50%)
+		height plus-width
+	&.toggle
+		transform rotate(180deg)
+		transform-origin center center
+		&:before
+			opacity 0
+			transform translateX(-50%) rotate(90deg)
+
+// Popup Container
+.flavor-options
+	position absolute
+	background white
+	top 67px
+	left 50%
+	width 100vw
+	transform translateX(-50%)
+	display block
+	box-shadow tile-shadow
+	z-index 10
+	@media (min-width S)
+		left 90%
+		width 400px
+
+.flavor-item
+	label
+		font-size 40px
+	// hides radio button
+	input
+		display none
+
+
+.overflow-containter
+	width 80%
+	margin 5% auto
+	max-height 500px
+	overflow-y scroll
+
+// Scroll Bar
+.flavor-item
+	display flex
+	margin-top 15px
+
+label, input
+	cursor pointer;
+
+// Radios
+label
+	font 'light', 18px, cool-grey
+	font-size 18px, true
+
+input[type='checkbox']
+input[type='radio']
+	appearance unset
+	background white
+	border none!important
+	box-shadow 0 1px 3px 0 rgba(22, 48, 95, 0.5)
+	height rem(27px)
+	width rem(27px)
+	display inline-block
+	border-radius 50%
+	margin-right rem(12px)
+	@media (min-width S)
+		height 18px
+		width 18px
+	&:checked
+		transition background 300ms ease-out
+		background cobalt
+		+ label
+			transition color 300ms ease-out
+			color cobalt !important

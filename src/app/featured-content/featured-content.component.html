@@ -1,0 +1,18 @@
+<div>
+	<div class="promo-block gutter v-space vueport" *ngFor="let feature of features">
+		<div *ngIf='feature && feature.title' class="content left">
+			<h2 class="title moveUp opacity" id='grow'>{{ feature.title }}</h2>
+			<h3 class="subtitle moveUp opacity" id='grow' [innerHtml]=feature.subtitle></h3>
+			<p class="copy moveUp opacity" id='grow' [innerHtml]=feature.body></p>
+			<button routerLink="{{ feature.link }}" class="cta opacity default show-desktop">{{ feature.linkText }}</button>
+		</div>
+		<div *ngIf='feature && feature.title' class="right">
+			<div class="product-card shadow-card" id='slideLeft'>
+				<div class="card-wrapper">
+					<img src="{{ feature.featureImage }}" alt="">
+					<button routerLink="{{ feature.link }}" class="cta opacity default show-mobile">{{ feature.linkText }}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

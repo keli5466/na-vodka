@@ -1,0 +1,43 @@
+<app-loading *ngIf="!doneLoading" (loaded)='isDoneLoading($event)'></app-loading>
+
+<div class='home-page' *ngIf="reveal">
+	<div class="header" [ngClass]="{'active': animate} ">
+		<div class="headline-block home gutter">
+			<div class="logo" id='grow'>
+				<img src='../../assets/images/logo.svg' />
+			</div>
+			<div class='headline-mask'>
+				<div class='top-mask'>
+					<h2 *ngIf='headline' class='headline moveUp' id='grow'>{{ headline }}</h2>
+					<h3 *ngIf='subhead' class="subhead opacity">{{ subhead }}</h3>
+				</div>
+				<div class="bottom-mask show-desktop">
+					<h2 *ngIf='headline' class='headline'>{{ headline }}</h2>
+					<h3 *ngIf='subhead' class="subhead">{{ subhead }}</h3>
+				</div>
+			</div>
+		</div>
+		<div class="hero-video" id='slideLeft'>
+			<app-video-player (loaded)='handleVideoReady($event)' *ngIf="videoURL" [videoURL]=videoURL></app-video-player>
+		</div>
+	</div>
+
+	<div class="drizly-cta text-center gutter vueport">
+		<div class="desktop-wrapper">
+			<img class="drizly-logo show-desktop" src="assets/images/icons/red-drizly.png" alt="">
+			<div class="column-wrapper">
+				<div class="cta-title"> order now</div>
+				<div class="copy"> One hour delivery</div>
+				<div class='row-wrapper'>
+					<img class="drizly-logo show-mobile" src="assets/images/icons/red-drizly.png" alt="">
+					<a href="http://www.drizly.com" class="underline">use drizly</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<app-featured-content *ngIf="featuredContentCollectionID" [featuredContentCollectionID]=featuredContentCollectionID></app-featured-content>
+	<app-featured-drink-slider *ngIf="featuredRecipeIDs" [featuredDrinkIDs]=featuredRecipeIDs></app-featured-drink-slider>
+	<app-x5-distilled></app-x5-distilled>
+	<app-stay-on-point></app-stay-on-point>
+</div>

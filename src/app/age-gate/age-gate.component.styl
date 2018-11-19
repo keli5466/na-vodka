@@ -1,0 +1,126 @@
+@import '../../definitions.styl'
+
+age-gate-z-index = 100
+
+.age-check
+	height 100vh
+	justify-content center
+	align-items center
+	position fixed
+	display flex
+	top 0
+	left 0
+	z-index age-gate-z-index
+	width 100%
+
+.agegate-wrapper
+	position relative
+	overflow hidden
+	transition 0.5s ease
+	width 100%
+	text-align center
+	will-change height
+	gpu-cache()
+
+.agegate
+	max-width rem(630px)
+	margin-top 5%//creates buffer
+	width 80%
+	padding-v(60px)
+	padding-h(5%)
+	background-color white
+	box-shadow tile-shadow
+	opacity 0
+	gpu-cache()
+	animation opacity 1s forwards cubic-bezier(0.6, 0.19, 0.07, 1)
+	@media (min-width S)
+		max-width 596px
+		width 100%
+		padding-v(30px)
+		padding-h(3%)
+
+.card
+	position absolute
+	top 0
+	visibility hidden
+	left 0
+	overflow hidden
+	transition 0.5s ease, opacity 300ms ease-in-out
+	opacity 0
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
+	width 100%
+	&.active
+		opacity 1
+		visibility visible
+
+.logo
+	width rem(140px)
+	gpu-cache()
+
+	img
+		width 100%
+
+.agegate-question
+	H2-Drink-Titles()
+	font-size 144px
+	width 70%
+	@media (min-width S)
+		font-size 108px, true
+		max-width 300px
+	color black
+	text-align center
+	margin-top rem(36px)
+	margin-bottom rem(12px)
+	@media (min-width S)
+		margin-top rem(27px)
+
+.agegate-date
+	color cobalt
+	word-spacing rem(24px)
+	margin rem(12px) auto
+	display block
+	@media (min-width S)
+		font-size 42px, true
+		line-height normal
+
+.agegate-check
+	subhead()
+	@media (min-width S)
+		font-size 27px, true
+
+.agegate-warning
+.agegate-birthday
+.agegate-question
+	margin-left auto
+	margin-right auto
+
+.agegate-warning
+	H3-body()
+	width 70%
+	letter-spacing normal
+	@media (min-width S)
+		font-size 18px, true
+
+
+.confirmation-buttons
+	margin-top rem(50px)
+	width 100%
+	margin-bottom 5px
+	@media (min-width S)
+		margin-top 18px
+	button:nth-child(2)
+		margin-left rem(18px)
+	.agegate-btn
+		max-width rem(170px)
+		height rem(56px)
+		font-size 24px
+
+
+.moveUp
+	opacity 0
+	animation moveUp 0.7s forwards cubic-bezier(0.25, 0, 0.25, 1.01) .4s
+#grow:after
+	animation grow 0.8s forwards cubic-bezier(0.6, 0.19, 0.07, 1) .4s

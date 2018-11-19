@@ -1,0 +1,122 @@
+
+#slideLeft
+	opacity 0
+
+#grow
+	overflow hidden
+	position relative
+
+	&:after
+		background white
+		bottom 0
+		content ''
+		height 100%
+		left 0
+		position absolute
+		width 100%
+
+.opacity
+	opacity 0
+	transition opacity 0.7s cubic-bezier(0.42, 0, 0.58, 1)
+
+@keyframes grow
+	0%
+		bottom 0
+
+	100%
+		bottom 200%
+
+@keyframes opacity
+	0%
+		opacity 0
+
+	100%
+		opacity 1
+
+.stager-in-vue
+	for i in (1 .. 100)
+		> *:nth-child({i})
+			opacity 0
+			transform translateY(50px)
+			transition transform 400ms cubic-bezier(0, 0, 0.2, 1), opacity 600ms ease
+			transition-delay 600ms + (i * 120)
+
+.stager
+	for i in (1 .. 100)
+		> div:nth-child({i})
+			animation-delay 500ms + (i * 120)
+			opacity 0
+
+@keyframes moveUpStagger
+	0%
+		opacity 0
+		transform translateY(50px)
+
+	60%
+		transform translateY(0)
+
+	100%
+		opacity 1
+		transform translateY(0)
+
+@keyframes inOut
+	0%
+		transform translateX(100%)
+
+	100%
+		transform translateX(0)
+
+@keyframes moveUp
+	0%
+		opacity 0
+		transform translateY(40%)
+
+	100%
+		opacity 1
+		transform translateY(0)
+
+.inView
+	.opacity
+		opacity 1
+
+	.moveUp
+		animation moveUp 0.7s forwards cubic-bezier(0.25, 0, 0.25, 1.01)
+		-webkit-backface-visibility hidden
+		-webkit-transform-style preserve-3d
+		// Text grows up, can only be used on white background
+
+	#grow:after
+		animation grow 0.8s forwards cubic-bezier(0.6, 0.19, 0.07, 1)
+		-webkit-backface-visibility hidden
+		-webkit-transform-style preserve-3d
+
+	// slide in from left
+	#slideLeft
+		gpu-cache()
+		animation inOut 1.1s forwards cubic-bezier(0.24, 0, 0.33, 0.99)
+		opacity 1
+		transition opacity 1.2s cubic-bezier(0.42, 0, 0.59, 1)
+
+	// stagger transition
+	.stager-in-vue
+		> *
+			opacity 1
+			transform translateY(0)
+
+	&.stager
+		> *
+			animation moveUpStagger 0.7s forwards cubic-bezier(0.25, 0, 0.25, 1.01)
+
+// Featured drink slider transitions
+.drink-slide
+	opacity 0
+	transform translateY(50px)
+	transition transform 400ms cubic-bezier(0, 0, 0.2, 1), opacity 600ms ease
+
+	for i in (1 .. 4)
+		&.drink-slide-{i}
+			transition-delay 120ms + (i * 120ms)
+
+	.inView &
+		opacity 1
+		transform translateY(0)

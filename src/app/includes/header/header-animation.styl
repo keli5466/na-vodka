@@ -1,0 +1,57 @@
+// Toggle Menu Bar
+#menu-bar
+	transition transform 300ms ease
+	backface-visibility hidden
+	&:hover
+		opacity 0.6
+
+	.bar
+		// Basics
+		width rem(55px)
+		height rem(6px)
+		background cobalt
+		animation-duration 0.5s
+		animation-direction reverse
+		animation-fill-mode backwards
+		&:nth-child(1)
+			animation-name outT
+		&:nth-child(2)
+			animation-name outM
+			margin rem(10px) 0
+		&:nth-child(3)
+			animation-name outB
+
+		@media (min-width S)
+			width rem(32px)
+			height 3px
+			&:nth-child(1)
+				animation-name outT_desk
+			&:nth-child(2)
+				margin 5px 0
+			&:nth-child(3)
+				animation-name outB_desk
+
+	&.active
+		.bar
+			animation-fill-mode forwards
+			animation-direction normal
+			&:nth-child(1)
+				animation-name inT
+			&:nth-child(2)
+				animation-name inM
+			&:nth-child(3)
+				animation-name inB
+
+			@media (min-width S)
+				&:nth-child(1)
+					animation-name inT_desk
+				&:nth-child(3)
+					animation-name inB_desk
+
+// Menu Container
+.mobile-menu
+	-webkit-transform-style preserve-3d
+	-webkit-backface-visibility hidden
+	transform translate3d(-110%, 0, 0)
+	&.animate
+		transform translate3d(0%, 0, 0)

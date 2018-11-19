@@ -1,0 +1,29 @@
+@import '~definitions.styl'
+
+.x-distilled
+	background url('../../assets/images/5x-distilled.jpg') center center / cover no-repeat
+	@media (max-width S - 1)
+		min-height 90vh
+
+.cta-block
+	text-align center
+	padding rem(v-space) rem(gutter)
+	color white
+	@media (min-width S)
+		.content
+			width 60%
+			max-width rem(662px)
+
+.content
+	margin 0 auto rem(287px - v-space)
+	width 100%
+
+.headline
+	margin-bottom rem(5px)
+
+.copy
+	color white
+	margin-bottom rem(40px)
+	@media (max-width S - 1)
+		font-family TradeGothicLTStd-Cn18
+		margin-bottom rem(50px)

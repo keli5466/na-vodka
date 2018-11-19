@@ -1,0 +1,39 @@
+@import '../../definitions.styl'
+
+.flavor-grid
+	display flex
+	flex-wrap wrap
+	margin-bottom rem(80px)
+	margin-top rem(80px)
+	opacity 1
+	padding-right 0
+	transition opacity 200ms ease
+
+	&.overlay
+		opacity 0.2
+
+.card-wrapper
+	padding rem(34px) rem(16px)
+
+.flavor
+	flex 1 1 42%
+	margin-bottom rem(42px)
+	margin-right rem(42px)
+	shadow(368, 570)
+
+	@media (min-width: S)
+		flex-basis 29%
+		flex-grow 0
+
+.flavor-img
+	margin-top auto
+	max-height 80%
+
+.flavor-name
+	color slate-grey
+	font-family body-font
+	font-size 44px
+	font-weight normal
+	margin-top auto
+	text-align center
+	text-transform capitalize

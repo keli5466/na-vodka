@@ -1,0 +1,48 @@
+<app-loading *ngIf="!doneLoading"></app-loading>
+
+<div class="recipe-detail" *ngIf="doneLoading">
+	<div class="headline-block gutter vueport">
+		<div class="featured" id="grow">featured recipe</div>
+		<div *ngIf="title" class="page-title" [innerHtml]="title" id="grow"></div>
+		<div
+			*ngIf="subcopy"
+			class="subhead-copy opacity"
+			[innerHtml]="subcopy"
+		></div>
+		<a class="share-recipe show-mobile opacity" [href]="shareURL">Share</a>
+		<img
+			*ngIf="featuredimage"
+			class="drink-img show-mobile"
+			id="slideLeft"
+			[src]="featuredimage"
+			[alt]="title"
+		/>
+
+		<p class="copy opacity" *ngIf="body" [innerHtml]="body"></p>
+
+		<div class="ingredients opacity">
+			<h4>ingredients</h4>
+			<p *ngIf="ingredients" class="copy" [innerHtml]="ingredients"></p>
+		</div>
+
+		<div class="instructions opacity">
+			<h4>instructions</h4>
+			<p class="copy" *ngIf="instructions" [innerHtml]="instructions"></p>
+		</div>
+	</div>
+
+	<div class="right show-desktop vueport">
+		<div class="drink-img show-desktop" id="slideLeft">
+			<img *ngIf="featuredimage" [src]="featuredimage" [alt]="title" />
+		</div>
+		<div class="video-placeholder" id="slideLeft"></div>
+	</div>
+</div>
+
+<app-featured-drink-slider
+	*ngIf="featuredRecipeIDs"
+	[featuredDrinkIDs]="featuredRecipeIDs"
+></app-featured-drink-slider>
+
+<app-x5-distilled></app-x5-distilled>
+<app-stay-on-point></app-stay-on-point>
